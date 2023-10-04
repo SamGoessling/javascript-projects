@@ -1,5 +1,13 @@
 //Define three variables for the LaunchCode shuttle - one for the starting fuel level, another for the number of astronauts aboard, and the third for the altitude the shuttle reaches.
+const inpute = require('realine-sync');
+let startingFuelLevel = 0;
+let numAstronauts = 0;
 
+while (startingFuelLevel < 5000 || startingFuelLevel > 30000 || isNaN(startingFuelLevel)) {
+  startingFuelLevel = Number(input.question('Sorry, ${startingFuelLevel} is not a valid fuel level input. Please enter a fuel level greater than 5000 and less than 30000: )));
+}
+
+console.log("Good job!");
 
 
 
