@@ -7,41 +7,46 @@ strings = [protoArray1, protoArray2, protoArray3, protoArray4];
 
 //2) 
 function reverseCommas() {
-	//TODO: 1. create and instantiate your variables.
-	let check;
-	let output;
-	//TODO: 2. write the code required for this step
-
-	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
-	return output;
+    if (strings[0].includes(',')) {
+        let splitArray = strings[0].split(',');
+        let reversedArray = splitArray.reverse();
+        return reversedArray.join(',');
+    } else {
+        return strings[0];
+    }
 }
 
 //3)
 function semiDash() {
-	let check;
-	let output;
-//TODO: write the code required for this step
-
-  
-	return output;
+    if (strings[1].includes(';')) {
+        let splitArray = strings[1].split(';');
+        let sortedArray = splitArray.sort();
+        return sortedArray.join('-');
+    } else {
+        return strings[1];
+    }
 }
 
 //4)
 function reverseSpaces() {
-	let check;
-	let output;
-  //TODO: write the code required for this step
-
-	return output;
+    if (strings[2].includes(' ')) {
+        let splitArray = strings[2].split(' ');
+        let reversedSortedArray = splitArray.sort().reverse();
+        return reversedSortedArray.join(' ');
+    } else {
+        return strings[2];
+    }
 }
 
 //5)
 function commaSpace() {
-	let check;
-	let output;
-	//TODO: write the code required for this step
-  
-	return output;
+    if (strings[3].includes(', ')) {
+        let splitArray = strings[3].split(', ');
+        let reversedArray = splitArray.reverse();
+        return reversedArray.join(',');
+    } else {
+        return strings[3];
+    }
 }
 
 // NOTE: Don't add or modify any code below this line or your program might not run as expected.
@@ -52,3 +57,4 @@ module.exports = {
 	reverseSpaces : reverseSpaces,
 	commaSpace : commaSpace
 };
+
