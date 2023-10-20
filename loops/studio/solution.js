@@ -16,28 +16,18 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, 4) {
   /// Part A #2: Write a ``for`` loop inside this function
   /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
 
-  for (let i = 0; i < pantry.length; i++) {
-    console.log(pantry[]);
-    for (let j = 0; j < protein.length; j++) {
-      console.log(protein[]);
-      for (let g = 0; g < grains.length; g++) {
-        console.log(grains[]);
-        for (let v = 0; v < veggies.length; v++) {
-          console.log(veggies[]);
-          for (let b = 0; b < beverages.length; b++) {
-            console.log(beverage[]);
-            for (let d = 0; d < desserts.length; d++) {
-              console.log(desserts[]);
-            }
-          }
-        }
-      }
+  for (let i = 0; i < numMeals; i++) {
+    let meal = [];
+    for (let j = 0; j < pantry.length; j++) {
+      let randomIndex = Math.floor(Math.random() * pantry[j].length);
+      meal.push(pantry[j][randomIndex]);
+      pantry[j].splice(randomIndex, 1);  
     }
+    meals.push(meal);
   }
 
   return meals;
 }
-
 
 function askForNumber() {
   numMeals = input.question("How many meals would you like to make?");
