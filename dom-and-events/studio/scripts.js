@@ -17,6 +17,7 @@ window.addEventListener("load", function() {
         if (result) {
             flightStatus.textContent = "Shuttle in flight.";
             shuttleBackground.style.backgroundColor = "blue";
+            //-- increase by 10,000 miles
             spaceShuttleHeight.textContent = parseInt(spaceShuttleHeight.textContent) + 10000;
         }
     });
@@ -25,7 +26,9 @@ window.addEventListener("load", function() {
         window.alert("The shuttle is landing. Landing gear engaged.");
         flightStatus.textContent = "The shuttle has landed.";
         shuttleBackground.style.backgroundColor = "green";
+        //-- brings shuttle back to 0
         spaceShuttleHeight.textContent = "0";
+        //-- reset
         resetRocketPosition();
     });
 
@@ -39,11 +42,13 @@ window.addEventListener("load", function() {
         }
     });
 
+//-- return rocket to original position function
     function resetRocketPosition() {
         rocket.style.left = "0px";
         rocket.style.bottom = "0px";
     }
     
+    //-- stops rocket from going outside of background boundary
     function checkRocketPosition() {
         const boundaries = {
             left: 0,
@@ -65,24 +70,28 @@ window.addEventListener("load", function() {
             rocket.style.bottom = boundaries.bottom + "px";
         }
     }
-    
+
+    //-- up^
     document.getElementById("up").addEventListener("click", function() {
         rocket.style.bottom = parseInt(rocket.style.bottom) + 10 + "px";
         spaceShuttleHeight.textContent = parseInt(spaceShuttleHeight.textContent) + 10000;
         checkRocketPosition();
     });
-    
+
+    //-- down↓
     document.getElementById("down").addEventListener("click", function() {
         rocket.style.bottom = parseInt(rocket.style.bottom) - 10 + "px";
         spaceShuttleHeight.textContent = parseInt(spaceShuttleHeight.textContent) - 10000;
         checkRocketPosition();
     });
     
+    //-- left<
     document.getElementById("left").addEventListener("click", function() {
         rocket.style.left = parseInt(rocket.style.left) - 10 + "px";
         checkRocketPosition();
     });
     
+    //-- right>
     document.getElementById("right").addEventListener("click", function() {
         rocket.style.left = parseInt(rocket.style.left) + 10 + "px";
         checkRocketPosition();
