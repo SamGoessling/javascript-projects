@@ -1,0 +1,11 @@
+body {
+    background: linear-gradient(to bottom, #dadddd, #5db191);
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
